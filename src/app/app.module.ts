@@ -12,6 +12,9 @@ import { InnerOneComponent } from './frist/inner-one.component';
 import { InnerTwoComponent } from './frist/inner-two.component';
 import { ViewEncapsulationComponent } from './view-encapsulation/view-encapsulation.component';
 import { ViewInComponent } from './view-encapsulation/view-in.component';
+import { DatabindingComponent } from './databinding/databinding.component';
+import { InterpolationComponent } from './databinding/interpolation.component';
+import { InputBindingComponent } from './databinding/input-binding.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +25,10 @@ import { ViewInComponent } from './view-encapsulation/view-in.component';
     InnerOneComponent,
     InnerTwoComponent,
     ViewEncapsulationComponent,
-    ViewInComponent
+    ViewInComponent,
+    DatabindingComponent,
+    InterpolationComponent,
+    InputBindingComponent
   ],
   imports: [
     BrowserModule,
