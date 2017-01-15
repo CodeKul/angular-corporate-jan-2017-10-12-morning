@@ -8,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 export class DatabindingComponent implements OnInit {
 
   backColorParent : string = '#ff0000';
+  incomingThirdData : string;
+  thirdInData : string = 'red';
 
   constructor() { }
-
 
   ngOnInit() {
   }

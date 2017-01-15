@@ -1,4 +1,4 @@
-import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output, Input } from '@angular/core';
 
 @Component({
   selector: 'app-event-binding',
@@ -6,6 +6,8 @@ import { Component, OnInit, EventEmitter, Output } from '@angular/core';
   styleUrls: ['./event-binding.component.css']
 })
 export class EventBindingComponent implements OnInit {
+
+  @Input() thirdTextData : string;
 
   @Output('inEv') myClick : EventEmitter<string> = new EventEmitter<string>();
 
@@ -16,7 +18,7 @@ export class EventBindingComponent implements OnInit {
 
   onButtonClicked(color : string){
     console.log(`Called Button`);
-    this.myClick.emit(color);
+    this.myClick.emit(this.thirdTextData);
   }
 
   onMouseIn(){

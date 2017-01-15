@@ -8,6 +8,9 @@
 </ul>
 
 <div>
+  <app-third (newData)="thirdInData = $event"></app-third>
+</div>
+<div>
   <app-interpolation></app-interpolation>
 </div>
 
@@ -18,6 +21,6 @@
 <div>
   <!--<app-event-binding (inEv)="onInComingBtnEvent($event)"></app-event-binding>-->
 
-  <app-event-binding (inEv)="backColorParent = $event"></app-event-binding>
+  <app-event-binding [thirdTextData]="thirdInData" (inEv)="backColorParent = $event"></app-event-binding>
 </div>
 

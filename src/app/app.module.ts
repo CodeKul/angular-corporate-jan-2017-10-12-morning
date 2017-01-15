@@ -16,6 +16,7 @@ import { DatabindingComponent } from './databinding/databinding.component';
 import { InterpolationComponent } from './databinding/interpolation.component';
 import { InputBindingComponent } from './databinding/input-binding.component';
 import { EventBindingComponent } from './databinding/event-binding.component';
+import { ThirdComponent } from './databinding/third.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { EventBindingComponent } from './databinding/event-binding.component';
     DatabindingComponent,
     InterpolationComponent,
     InputBindingComponent,
-    EventBindingComponent
+    EventBindingComponent,
+    ThirdComponent
   ],
   imports: [
     BrowserModule,
