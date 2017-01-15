@@ -12,10 +12,12 @@
 </div>
 
 <div>
-  <app-input-binding [backColor]="'#0000ff'"></app-input-binding>
+  <app-input-binding [backColor]="backColorParent"></app-input-binding>
 </div>
 
 <div>
-  <app-event-binding (inEv)="onInComingBtnEvent($event)"></app-event-binding>
+  <!--<app-event-binding (inEv)="onInComingBtnEvent($event)"></app-event-binding>-->
+
+  <app-event-binding (inEv)="backColorParent = $event"></app-event-binding>
 </div>
 

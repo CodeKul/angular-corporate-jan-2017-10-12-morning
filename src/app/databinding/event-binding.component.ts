@@ -14,9 +14,9 @@ export class EventBindingComponent implements OnInit {
   ngOnInit() {
   }
 
-  onButtonClicked(){
+  onButtonClicked(color : string){
     console.log(`Called Button`);
-    this.myClick.emit(new Date().toString());
+    this.myClick.emit(color);
   }
 
   onMouseIn(){

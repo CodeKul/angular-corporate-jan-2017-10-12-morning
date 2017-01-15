@@ -1,7 +1,8 @@
 <h1>Event Binding</h1>
 <hr>
 
-<input type="button" value="Okay" (click)="onButtonClicked()">
+<input type="text" #color/>
+<input type="button" value="Okay" (click)="onButtonClicked(color.value)">
 
 <div class="squ" (mouseenter)="onMouseIn()">
 

@@ -7,13 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DatabindingComponent implements OnInit {
 
+  backColorParent : string = '#ff0000';
+
   constructor() { }
+
 
   ngOnInit() {
   }
 
-  onInComingBtnEvent(date : string){
-    console.log(`Incoming Event Parent ${date}`);
+  onInComingBtnEvent(color : string){
+    this.backColorParent = color;
+    console.log(`Incoming Event Parent ${color}`);
   }
 
 }
