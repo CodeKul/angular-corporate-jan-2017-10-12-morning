@@ -12,4 +12,8 @@ export class DatabindingComponent implements OnInit {
   ngOnInit() {
   }
 
+  onInComingBtnEvent(date : string){
+    console.log(`Incoming Event Parent ${date}`);
+  }
+
 }

@@ -15,6 +15,7 @@ import { ViewInComponent } from './view-encapsulation/view-in.component';
 import { DatabindingComponent } from './databinding/databinding.component';
 import { InterpolationComponent } from './databinding/interpolation.component';
 import { InputBindingComponent } from './databinding/input-binding.component';
+import { EventBindingComponent } from './databinding/event-binding.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { InputBindingComponent } from './databinding/input-binding.component';
     ViewInComponent,
     DatabindingComponent,
     InterpolationComponent,
-    InputBindingComponent
+    InputBindingComponent,
+    EventBindingComponent
   ],
   imports: [
     BrowserModule,
