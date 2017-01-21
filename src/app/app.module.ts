@@ -17,6 +17,9 @@ import { InterpolationComponent } from './databinding/interpolation.component';
 import { InputBindingComponent } from './databinding/input-binding.component';
 import { EventBindingComponent } from './databinding/event-binding.component';
 import { ThirdComponent } from './databinding/third.component';
+import { LifeCycleComponent } from './life-cycle/life-cycle.component';
+import { LifeChildComponent } from './life-cycle/life-child.component';
+import { LifeParentComponent } from './life-cycle/life-parent.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +35,10 @@ import { ThirdComponent } from './databinding/third.component';
     InterpolationComponent,
     InputBindingComponent,
     EventBindingComponent,
-    ThirdComponent
+    ThirdComponent,
+    LifeCycleComponent,
+    LifeChildComponent,
+    LifeParentComponent
   ],
   imports: [
     BrowserModule,
