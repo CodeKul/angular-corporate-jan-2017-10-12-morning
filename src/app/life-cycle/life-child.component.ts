@@ -22,8 +22,8 @@ import {
      </ul>
    </div>
 
-   <input type="text" #myName/>
-   <input type="button" value="Show mobiles"  (click)="mobiles = true"/>
+   <input type="text" #myName />
+   <input type="button" value="Show mobiles"  (click)="mobiles = true" class="btn btn-primary"/>
   `,
   styles: []
 })

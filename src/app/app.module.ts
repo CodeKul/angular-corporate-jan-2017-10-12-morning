@@ -20,6 +20,8 @@ import { ThirdComponent } from './databinding/third.component';
 import { LifeCycleComponent } from './life-cycle/life-cycle.component';
 import { LifeChildComponent } from './life-cycle/life-child.component';
 import { LifeParentComponent } from './life-cycle/life-parent.component';
+import { DirectivesComponent } from './directives/directives.component';
+import { NavBarComponent } from './nav-bar/nav-bar.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +40,9 @@ import { LifeParentComponent } from './life-cycle/life-parent.component';
     ThirdComponent,
     LifeCycleComponent,
     LifeChildComponent,
-    LifeParentComponent
+    LifeParentComponent,
+    DirectivesComponent,
+    NavBarComponent
   ],
   imports: [
     BrowserModule,
