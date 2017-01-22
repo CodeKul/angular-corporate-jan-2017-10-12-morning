@@ -22,6 +22,7 @@ import { LifeChildComponent } from './life-cycle/life-child.component';
 import { LifeParentComponent } from './life-cycle/life-parent.component';
 import { DirectivesComponent } from './directives/directives.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
+import { CodeResizerDirective } from './directives/code-resizer.directive';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
     LifeChildComponent,
     LifeParentComponent,
     DirectivesComponent,
-    NavBarComponent
+    NavBarComponent,
+    CodeResizerDirective
   ],
   imports: [
     BrowserModule,
