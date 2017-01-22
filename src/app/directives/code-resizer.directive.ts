@@ -1,9 +1,12 @@
-import { Directive, ElementRef, Renderer, HostListener, HostBinding, OnChanges } from '@angular/core';
+import { Directive, ElementRef, Renderer, HostListener, HostBinding, OnChanges, Input } from '@angular/core';
 
 @Directive({
   selector: '[codeResizer]'
 })
 export class CodeResizerDirective implements OnChanges{
+
+  @Input('codeResizer')
+  fireMouseExit : number;
 
   @HostBinding('style.width') 
   widthBox : string;
@@ -17,7 +20,8 @@ export class CodeResizerDirective implements OnChanges{
   @HostListener('mouseleave')
   mouseout() {
     //this.rend.setElementStyle(this.elRef.nativeElement, 'width', '200px');
-    this.widthBox = '200px';
+    if(this.fireMouseExit == 2)
+      this.widthBox = '200px';
   }
 
   constructor(
