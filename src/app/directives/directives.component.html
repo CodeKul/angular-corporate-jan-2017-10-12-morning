@@ -1,8 +1,8 @@
 <div class="container">
   <div class="row">
-      <div class="col-md-12">
-        <h1>Directives</h1>
-      </div>
+    <div class="col-md-12">
+      <h1>Directives</h1>
+    </div>
   </div>
   <div class="row">
     <div class="col-md-12">
@@ -25,7 +25,7 @@
       <p> Custom Attribute Directive</p>
     </div>
     <div class="col-md-9">
-      <input type="text" [codeResizer] = "1"/>
+      <input type="text" [codeResizer]="1" />
     </div>
   </div>
 
@@ -34,7 +34,77 @@
       <p> Custom Attribute Directive</p>
     </div>
     <div class="col-md-9">
-      <input type="text" [codeResizer] = "2"/>
+      <input type="text" [codeResizer]="2" />
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <p>Structural Directives</p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-2">
+      <h4>*ngIf</h4>
+    </div>
+    <div class="col-md-6">
+      <div *ngIf="isOkay"> Yes u clicked Okay </div>
+    </div>
+    <div class="col-md-4">
+      <input type="button" value="Okay" class="btn btn-primary" (click)="isOkay = !isOkay">
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-2">
+      <h4>*ngFor</h4>
+    </div>
+    <div class="col-md-10">
+      <ul *ngFor="let mobile of mobiles; let pos = index;">
+        <li><a href="#">{{mobile}} -- {{pos}}</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-2">
+      <h4>*ngSwitch</h4>
+    </div>
+    <div class="col-md-6">
+      <div [ngSwitch]="digit">
+        <div *ngSwitchCase="1"> One </div>
+        <div *ngSwitchCase="2"> Two </div>
+        <div *ngSwitchCase="3"> Three </div>
+        <div *ngSwitchDefault> Its is default </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <input type="button" value="One" (click)="digit = 1" class="btn btn-primary">
+      <input type="button" value="Two" (click)="digit = 2" class="btn btn-primary">
+      <input type="button" value="Three" (click)="digit = 3" class="btn btn-primary">
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-2">
+      <h4>Desugared Syntax</h4>
+    </div>
+    <div class="col-md-10">
+      <template [ngIf]="isOkay">
+        <p>This is Desugared data</p>
+      </template>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-2">
+      <h4>Custom Structural Directives</h4>
+    </div>
+    <div class="col-md-10">
+      <template my [myPizza]="true" >
+        <input type="text" placeholder="android">
+      </template>
     </div>
   </div>
 </div>

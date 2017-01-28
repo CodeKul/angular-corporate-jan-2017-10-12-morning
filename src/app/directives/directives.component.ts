@@ -7,7 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DirectivesComponent implements OnInit {
 
-  constructor() { }
+  mobiles = [];
+  constructor() {
+    this.mobiles.push('Android');
+    this.mobiles.push('Nokia');
+    this.mobiles.push('Samsung');
+    this.mobiles.push('Apple');
+    this.mobiles.push('Windows');
+  }
 
   ngOnInit() {
   }

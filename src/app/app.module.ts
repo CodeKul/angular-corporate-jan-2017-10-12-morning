@@ -23,6 +23,10 @@ import { LifeParentComponent } from './life-cycle/life-parent.component';
 import { DirectivesComponent } from './directives/directives.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { CodeResizerDirective } from './directives/code-resizer.directive';
+import { MyDirective } from './directives/my.directive';
+import { NavComponent } from './nav/nav.component';
+import { DropdownDirective } from './nav/dropdown.directive';
+import { JumbotronComponent } from './jumbotron/jumbotron.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +48,11 @@ import { CodeResizerDirective } from './directives/code-resizer.directive';
     LifeParentComponent,
     DirectivesComponent,
     NavBarComponent,
-    CodeResizerDirective
+    CodeResizerDirective,
+    MyDirective,
+    NavComponent,
+    DropdownDirective,
+    JumbotronComponent
   ],
   imports: [
     BrowserModule,
