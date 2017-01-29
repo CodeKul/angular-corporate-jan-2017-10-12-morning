@@ -1,0 +1,19 @@
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-8">
+      <input #menuName type="text" placeholder="menu">
+    </div>
+    <div class="col-md-4">
+      <input type="button" placeholder="menu" class="btn btn-primary" (click)="newMenu(menuName.value)" value="New Menu">
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <ul *ngFor="let menu of menus">
+        <li>{{menu}}</li>
+      </ul>
+    </div>
+  </div>
+</div>

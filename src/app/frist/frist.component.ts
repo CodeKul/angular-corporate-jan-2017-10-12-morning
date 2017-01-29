@@ -1,4 +1,3 @@
-import { ServiceFirstService } from './../service-first.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -8,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FristComponent implements OnInit {
 
-  constructor(private service : ServiceFirstService) { }
+  constructor() { }
 
   ngOnInit() {
   }

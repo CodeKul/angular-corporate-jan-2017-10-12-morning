@@ -1,4 +1,5 @@
-import { ServiceFirstService } from './service-first.service';
+import { MouseService } from './service/mouse.service';
+import { MenuBarService } from './service/menu-bar.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -28,6 +29,8 @@ import { NavComponent } from './nav/nav.component';
 import { DropdownDirective } from './nav/dropdown.directive';
 import { JumbotronComponent } from './jumbotron/jumbotron.component';
 import { ServiceComponent } from './service/service.component';
+import { ChidNavComponent } from './service/chid-nav.component';
+import { SomeOtherComponent } from './service/some-other.component';
 
 @NgModule({
   declarations: [
@@ -54,15 +57,18 @@ import { ServiceComponent } from './service/service.component';
     NavComponent,
     DropdownDirective,
     JumbotronComponent,
-    ServiceComponent
+    ServiceComponent,
+    ChidNavComponent,
+    ChidNavComponent,
+    SomeOtherComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule
   ],
-  providers: [ServiceFirstService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  providers :[MenuBarService, MouseService]
 })
 export class AppModule { }
 
