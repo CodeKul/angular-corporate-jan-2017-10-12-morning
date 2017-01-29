@@ -27,6 +27,7 @@ import { MyDirective } from './directives/my.directive';
 import { NavComponent } from './nav/nav.component';
 import { DropdownDirective } from './nav/dropdown.directive';
 import { JumbotronComponent } from './jumbotron/jumbotron.component';
+import { ServiceComponent } from './service/service.component';
 
 @NgModule({
   declarations: [
@@ -52,7 +53,8 @@ import { JumbotronComponent } from './jumbotron/jumbotron.component';
     MyDirective,
     NavComponent,
     DropdownDirective,
-    JumbotronComponent
+    JumbotronComponent,
+    ServiceComponent
   ],
   imports: [
     BrowserModule,
