@@ -5,14 +5,14 @@ import { Component, OnInit } from '@angular/core';
   selector: 'app-service',
   templateUrl: './service.component.html',
   styleUrls: ['./service.component.css']
-  // providers : [MenuBarService]
+  // providers: [MenuBarService]
 })
 export class ServiceComponent implements OnInit {
 
   menus = [];
   constructor(
-    private menuBar : MenuBarService
-  ) { 
+    private menuBar?: MenuBarService
+  ) {
 
   }
 
@@ -20,7 +20,7 @@ export class ServiceComponent implements OnInit {
     this.menus = this.menuBar.getMenus();
   }
 
-  newMenu(menu : string) {
+  newMenu(menu: string) {
     this.menuBar.addMenu(menu);
   }
 }
