@@ -31,6 +31,8 @@ import { JumbotronComponent } from './jumbotron/jumbotron.component';
 import { ServiceComponent } from './service/service.component';
 import { ChidNavComponent } from './service/chid-nav.component';
 import { SomeOtherComponent } from './service/some-other.component';
+import { FormsComponent } from './forms/forms.component';
+import { TemplateDrivenComponent } from './forms/template-driven.component';
 
 @NgModule({
   declarations: [
@@ -60,7 +62,9 @@ import { SomeOtherComponent } from './service/some-other.component';
     ServiceComponent,
     ChidNavComponent,
     ChidNavComponent,
-    SomeOtherComponent
+    SomeOtherComponent,
+    FormsComponent,
+    TemplateDrivenComponent
   ],
   imports: [
     BrowserModule,
