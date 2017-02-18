@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, FormBuilder, NgForm, Validators } from '@angular/forms';
+import { FormGroup, FormControl, FormBuilder, NgForm, Validators, FormArray } from '@angular/forms';
 
 @Component({
   selector: 'app-data-driven',
@@ -20,7 +20,11 @@ export class DataDrivenComponent implements OnInit {
         email: ['', [Validators.required, Validators.pattern("[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?")]]
       }),
       password: ['', Validators.required],
-      country : ['India']
+      country : ['India'],
+      nums : formBuilder.array([
+        new FormControl('9762548833'),
+        new FormControl('9762548834')        
+      ])
     });
   }
 
@@ -29,5 +33,9 @@ export class DataDrivenComponent implements OnInit {
 
   onSubmit() {
     console.log(this.myForm);
+  }
+
+  addNewNum() {
+    (<FormArray>this.myForm.controls['nums']).push(new FormControl())
   }
 }

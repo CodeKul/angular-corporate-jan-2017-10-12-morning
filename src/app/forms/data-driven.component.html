@@ -61,6 +61,20 @@
         <button type="submit" class="btn btn-primary btn-block" [disabled]="!myForm.valid">Register</button>
       </div>
     </div>
+
+      <div class="form-group" formArrayName="nums">
+        <div class="row" *ngFor="let num of myForm.controls.nums.value; let ind = index;">
+          <div class="col-md-6">
+          </div>
+          <div class="col-md-3">
+            <input type="text" formControlName="{{ind}}" >
+          </div>
+
+          <div class="col-md-3">
+            <input type="button" class="btn btn-primary" value="New" (click)="addNewNum()">
+          </div>
+        </div>
+      </div>
   </form>
   <!-- /form -->
 </div>
