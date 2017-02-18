@@ -33,6 +33,9 @@ import { ChidNavComponent } from './service/chid-nav.component';
 import { SomeOtherComponent } from './service/some-other.component';
 import { FormsComponent } from './forms/forms.component';
 import { TemplateDrivenComponent } from './forms/template-driven.component';
+import { DataDrivenComponent } from './forms/data-driven.component';
+
+import { ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -64,12 +67,14 @@ import { TemplateDrivenComponent } from './forms/template-driven.component';
     ChidNavComponent,
     SomeOtherComponent,
     FormsComponent,
-    TemplateDrivenComponent
+    TemplateDrivenComponent,
+    DataDrivenComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    ReactiveFormsModule
   ],
   bootstrap: [AppComponent],
   providers :[MenuBarService, MouseService]
