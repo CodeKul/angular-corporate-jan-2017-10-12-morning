@@ -4,24 +4,47 @@
     <hr>
   </div>
   <div class="row">
-    <div class="col-md-12">
+    <div class="col-md-12  ">
       Os : {{myOs}}
     </div>
-    <div class="col-md-12">
+    <div class="col-md-12  ">
       Os : {{myOs | uppercase}}
     </div>
-    <div class="col-md-12">
+    <div class="col-md-12  ">
       date : {{date | date:"dd-MM-yyyy hh:mm"}}
     </div>
-    <div class="col-md-12">
+    <div class="col-md-12  ">
       money : {{money | currency:"INR"}}
     </div>
-    <div class="col-md-12">
+    <div class="col-md-12  ">
       Sliced Os : {{myOs | slice:1:3 | uppercase}}
     </div>
 
-    <div class="col-md-12">
+    <div class="col-md-12  ">
+      <h1>Custom Pipes</h1>
+      <hr>
+    </div>
+    <div class="col-md-12  ">
       money : {{money | tripple:5:10 | currency:"INR"}}
+    </div>
+
+    <div class="col-md-12  ">
+      <h1>Filters</h1>
+      <hr>
+    </div>
+
+    <div class="col-md-12  ">
+      <div class="col-md-6">
+        <input type="text" #osIp>
+      </div>
+      <div class="col-md-6">
+        <input type="button" (click)="addOs(osIp.value)" value="Add Os" class="btn btn-primary">
+      </div>
+    </div>
+    <div class="col-md-12  ">
+      <ul>
+        <li *ngFor="let o of os | osFilter"> {{o}}</li>
+      </ul>
     </div>
   </div>
 </div>

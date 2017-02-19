@@ -11,9 +11,14 @@ export class PipesComponent implements OnInit {
   date = new Date();
   money = 100;
 
+  os = ['Mango', 'Android', 'Symbian', 'Bada', 'Rim', 'Windows','Palm','Apple'];
+
   constructor() { }
 
   ngOnInit() {
   }
 
+  addOs(o : string) {
+    this.os.push(o);
+  }
 }
