@@ -37,6 +37,9 @@ export class DataDrivenComponent implements OnInit {
         new FormControl('9762548834')
       ])
     });
+
+    this.myForm.statusChanges.subscribe((sts) => console.log(sts));
+    this.myForm.valueChanges.subscribe((val) => console.log(val));
   }
 
   ngOnInit() {
