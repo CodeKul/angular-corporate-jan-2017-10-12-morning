@@ -10,6 +10,8 @@ import {
   AbstractControl
 } from '@angular/forms';
 
+import {Observable} from 'rxjs/Rx';
+
 @Component({
   selector: 'app-data-driven',
   templateUrl: './data-driven.component.html',
@@ -25,7 +27,7 @@ export class DataDrivenComponent implements OnInit {
   constructor(formBuilder: FormBuilder) {
     this.myForm = formBuilder.group({
       userGroup: formBuilder.group({
-        userName: ['', this.sampleValidatorV2('userName')],
+        userName: ['', this.sampleValidatorV2('userName'), this.sampleAsync],
         email: ['', [Validators.required, Validators.pattern("[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?")]]
       }),
       password: ['', [Validators.required, this.sampleValidatorV2('password')]],
@@ -55,13 +57,22 @@ export class DataDrivenComponent implements OnInit {
   sampleValidatorV2(name: string): ValidatorFn {
     if (name === 'userName') {
       return (control: AbstractControl): { [key: string]: any } => {
-        return control.value == 'a' ? { validation: true } : null;
+        return control.value === 'a' ? { validation: true } : null;
       };
     }
     if(name === 'password' ) {
       return (control: AbstractControl): { [key: string]: any } => {
-        return control.value == 'b' ? { validation: true } : null;
+        return control.value === 'b' ? { validation: true } : null;
       };
     }
+  }
+
+  sampleAsync(control : FormControl) : Promise<any> | Observable<any> {
+    return new Promise<any>((resolve, reject) => {
+      setTimeout( () => {
+        if(control.value === 'a') resolve({valid : true})
+        else resolve(null);
+      },1500);
+    });
   }
 }
