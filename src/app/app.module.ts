@@ -37,6 +37,7 @@ import { DataDrivenComponent } from './forms/data-driven.component';
 
 import { ReactiveFormsModule} from '@angular/forms';
 import { PipesComponent } from './pipes/pipes.component';
+import { TripplePipe } from './pipes/tripple.pipe';
 
 @NgModule({
   declarations: [
@@ -70,7 +71,8 @@ import { PipesComponent } from './pipes/pipes.component';
     FormsComponent,
     TemplateDrivenComponent,
     DataDrivenComponent,
-    PipesComponent
+    PipesComponent,
+    TripplePipe
   ],
   imports: [
     BrowserModule,
