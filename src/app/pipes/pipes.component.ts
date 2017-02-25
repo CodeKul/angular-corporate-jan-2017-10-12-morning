@@ -13,6 +13,13 @@ export class PipesComponent implements OnInit {
 
   os = ['Mango', 'Android', 'Symbian', 'Bada', 'Rim', 'Windows','Palm','Apple'];
 
+  asyncValue = new Promise((res, rej) =>{
+    setTimeout( data =>{
+      data = 'hello';
+      res('Okay');
+    }, 1000);
+  });
+
   constructor() { }
 
   ngOnInit() {
