@@ -13,8 +13,6 @@ export class HttpComponent implements OnInit, OnDestroy {
   private subFor: Subscription;
   private forObservable: Observable<number>;
 
-  // @ViewChild('myIp') myIp : ElementRef;
-
   constructor() {
   }
 
@@ -23,7 +21,7 @@ export class HttpComponent implements OnInit, OnDestroy {
     //this.subFor = this.forOb().subscribe(i => console.log(`${i}`), err => { }, () => { });
 
     this.forObservable = this.forOb();
-    this.subFor = this.forObservable.subscribe(this.onNext, this.onError, this.onComplete;
+    this.subFor = this.forObservable.subscribe(this.onNext, this.onError, this.onComplete);
     console.log(`After observable`);
   }
 
