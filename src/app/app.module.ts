@@ -39,6 +39,7 @@ import { ReactiveFormsModule} from '@angular/forms';
 import { PipesComponent } from './pipes/pipes.component';
 import { TripplePipe } from './pipes/tripple.pipe';
 import { OsFilterPipe } from './pipes/os-filter.pipe';
+import { HttpComponent } from './http/http.component';
 
 @NgModule({
   declarations: [
@@ -74,7 +75,8 @@ import { OsFilterPipe } from './pipes/os-filter.pipe';
     DataDrivenComponent,
     PipesComponent,
     TripplePipe,
-    OsFilterPipe
+    OsFilterPipe,
+    HttpComponent
   ],
   imports: [
     BrowserModule,
