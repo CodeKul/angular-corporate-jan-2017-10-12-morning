@@ -1,5 +1,6 @@
-import { Observable, Subscription } from 'rxjs/Rx';
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Observable, Subscription, Subscriber } from 'rxjs/Rx';
+import 'rxjs/Rx';
+import { Component, OnInit, OnDestroy, ViewChild, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-http',
@@ -8,13 +9,21 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 })
 export class HttpComponent implements OnInit, OnDestroy {
 
-  i = 0;
-  private subFor : Subscription;
-  constructor() { }
+  public my = 0;
+  private subFor: Subscription;
+  private forObservable: Observable<number>;
+
+  // @ViewChild('myIp') myIp : ElementRef;
+
+  constructor() {
+  }
 
   ngOnInit() {
     console.log(`Before observable`);
-    this.subFor = this.forOb().subscribe(i => console.log(`${i}`), err => { }, () => { });
+    //this.subFor = this.forOb().subscribe(i => console.log(`${i}`), err => { }, () => { });
+
+    this.forObservable = this.forOb();
+    this.subFor = this.forObservable.subscribe(this.onNext, this.onError, this.onComplete;
     console.log(`After observable`);
   }
 
@@ -22,12 +31,24 @@ export class HttpComponent implements OnInit, OnDestroy {
     this.subFor.unsubscribe();
   }
 
-  forOb() {
-    return Observable.create(sub => {
-      setTimeout(tt => {
-        for (let i = 1; i < 100; i++) sub.next(i);
-        sub.complete();
-      }, 1000);
+  onNext = (i : number) : void => {
+    this.my = i;
+  }
+
+  onError = (error: any) : void => { // interfaces
+
+  }
+
+  onComplete = function() {  
+
+  };
+
+  forOb(): Observable<number> {
+    return Observable.create((sub: Subscriber<number>) => {
+      // setTimeout(tt => {
+      for (let i = 1; i < 100; i++) sub.next(i);
+      sub.complete();
+      // }, 1000);
     });
   }
 }

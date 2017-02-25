@@ -1,4 +1,13 @@
-<p>
-  http works!
-  {{i}}
-</p>
+<div class="container">
+  <div class="col-md-12">
+    <h1> Observables And Http</h1>
+    <hr>
+  </div>
+  <div class="col-md-12">
+    {{forObservable | async}}
+  </div>
+  <div class="col-md-12">
+    {{my}}
+    <input type="text"  [(ngModel)]="my" #myIp>
+  </div>
+</div>
