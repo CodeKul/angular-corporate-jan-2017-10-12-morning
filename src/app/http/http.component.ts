@@ -58,6 +58,10 @@ export class HttpComponent implements OnInit, OnDestroy {
     // this.subFor.add();
   }
 
+  postData() {
+    this.httpService.postData({userName: 'android', password : 'java'}).subscribe(this.httpData);
+  }
+
   httpData = (data) =>{
     console.log(data.mapRoot);
   }
