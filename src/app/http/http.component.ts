@@ -1,3 +1,4 @@
+import { HttServiceService } from './htt-service.service';
 import { Observable, Subscription, Subscriber } from 'rxjs/Rx';
 import 'rxjs/Rx';
 import { Component, OnInit, OnDestroy, ViewChild, ElementRef } from '@angular/core';
@@ -13,7 +14,9 @@ export class HttpComponent implements OnInit, OnDestroy {
   private subFor: Subscription;
   private forObservable: Observable<number>;
 
-  constructor() {
+  constructor(
+    private httpService : HttServiceService
+  ) {
   }
 
   ngOnInit() {
@@ -48,5 +51,14 @@ export class HttpComponent implements OnInit, OnDestroy {
       sub.complete();
       // }, 1000);
     });
+  }
+
+  fetchData() {
+    this.httpService.getData().subscribe(this.httpData)
+    // this.subFor.add();
+  }
+
+  httpData = (data) =>{
+    console.log(data.mapRoot);
   }
 }

@@ -1,3 +1,4 @@
+import { HttServiceService } from './http/htt-service.service';
 import { MouseService } from './service/mouse.service';
 import { MenuBarService } from './service/menu-bar.service';
 import { BrowserModule } from '@angular/platform-browser';
@@ -85,7 +86,7 @@ import { HttpComponent } from './http/http.component';
     ReactiveFormsModule
   ],
   bootstrap: [AppComponent],
-  providers :[MenuBarService, MouseService]
+  providers :[MenuBarService, MouseService, HttServiceService]
 })
 export class AppModule { }
 
